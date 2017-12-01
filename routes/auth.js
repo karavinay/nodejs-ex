@@ -1,3 +1,4 @@
+
 var express = require('express');
 var router = express.Router();
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
@@ -29,7 +30,7 @@ router.use(mw('time'))
 // router.use(mw('haltOnTimedout'))
 
 router.post('/signup', function(req, res, next) {
-
+"use strict";
 	console.log('/signup: ',req.requestTime)
 	console.log('/signup: ',req.body.email)
 
