@@ -1,4 +1,3 @@
-"use strict";
 
 var express = require('express');
 var router = express.Router();
@@ -74,7 +73,7 @@ router.post('/signup', function(req, res, next) {
       const nodemailer = require('nodemailer');
 
       // create reusable transporter object using the default SMTP transport
-      let transporter = nodemailer.createTransport({
+      var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
             user: 'testnodeemail123@gmail.com',
@@ -92,7 +91,7 @@ router.post('/signup', function(req, res, next) {
         var link = configApp.appurl+"/verify/"+token+"/"+user._id;
 
         // setup email data with unicode symbols
-        let mailOptions = {
+        var mailOptions = {
           from: '"CompanyName: 👻" <admin@company.in>', // sender address
           to: req.body.email, // list of receivers
           subject: 'Company Name: Signup Verification ✔', // Subject line
