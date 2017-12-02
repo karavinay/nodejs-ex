@@ -234,7 +234,7 @@ router.post('/forgotPassword', function(req, res, next) {
       const nodemailer = require('nodemailer');
 
       // create reusable transporter object using the default SMTP transport
-      let transporter = nodemailer.createTransport({
+      var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
             user: 'testnodeemail123@gmail.com',
@@ -245,7 +245,7 @@ router.post('/forgotPassword', function(req, res, next) {
       var link = configApp.appurl+"/resetPassword/"+token+"/"+user._id;
 
       // setup email data with unicode symbols
-      let mailOptions = {
+      var mailOptions = {
         from: '"Company Name: 👻" <admin@company.in>', // sender address
         to: req.body.email, // list of receivers
         subject: 'Company Name: Reset Password ✔', // Subject line
