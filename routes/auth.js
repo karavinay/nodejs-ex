@@ -1,3 +1,4 @@
+"use strict";
 
 var express = require('express');
 var router = express.Router();
@@ -30,7 +31,6 @@ router.use(mw('time'))
 // router.use(mw('haltOnTimedout'))
 
 router.post('/signup', function(req, res, next) {
-"use strict";
 	console.log('/signup: ',req.requestTime)
 	console.log('/signup: ',req.body.email)
 
